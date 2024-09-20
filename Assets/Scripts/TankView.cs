@@ -5,6 +5,7 @@ public class TankView : MonoBehaviour
     private TankController tankController;
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Vector3 camOffset;
+    [SerializeField] private MeshRenderer[] childs;
     private float movement;
     private float rotation;
     private Camera cam;
@@ -42,7 +43,12 @@ public class TankView : MonoBehaviour
 	{
             tankController = _tankController;
 	}
-    
+
+    public void ChangeColor(Material color)
+    {
+        foreach (var child in childs) child.material = color;
+    }
+
     public Rigidbody GetRigidBody()
     {
         return rb;

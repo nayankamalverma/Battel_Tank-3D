@@ -13,6 +13,7 @@ public class TankController
         tankModel.SetTankController(this);
         this.tankView.SetTankController(this);
         rigidBody = this.tankView.GetRigidBody();
+        this.tankView.ChangeColor(tankModel.color);
     }
 
 
